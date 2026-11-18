@@ -41,7 +41,7 @@
     .download{min-width:220px;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 20px;border:1px solid #ffffff38;border-radius:11px;background:#f7f7ff;color:#10111c;font-weight:780;box-shadow:0 7px 28px #0008}
     .download.secondary{background:#171629;color:#f3f1ff;border-color:#aaa0ff75}
     .download .arrow{font-size:1.25rem}
-    .download small{display:block;font-size:.7rem;line-height:1.25;font-weight:650;opacity:.65;text-align:left}\n    .download-item{display:flex;flex-direction:column;align-items:center;gap:8px}\n    .coord-note{margin:0;color:#85899b;font-size:.78rem;font-weight:550;text-align:center}
+    .download small{display:block;font-size:.7rem;line-height:1.25;font-weight:650;opacity:.65;text-align:left}\n    .download-item{display:flex;flex-direction:column;align-items:center;gap:8px}\n    .coord-note{margin:0;color:#85899b;font-size:.78rem;font-weight:550;text-align:center;text-decoration:underline;text-decoration-color:#85899b66;text-underline-offset:3px;transition:color .2s ease}\n    .coord-note:hover{color:#c5bdff}
     /* Flat rotating Earth disc with geographic map, clipped below the viewport. */
     main{overflow:hidden}
     .earth-wrap{position:absolute;z-index:0;left:50%;bottom:calc(-180vw + 24vh);transform:translateX(-50%);width:180vw;height:180vw;pointer-events:none}
@@ -70,7 +70,7 @@
       <p class="hero-subtitle">A Place for my projects</p>
       <p class="hero-description">"I upload my &quot;Mallow&quot; Projects here for people to download/use"</p>
       <div class="downloads" id="downloads">
-        <div class="download-item"><a class="download" aria-disabled="true"><span class="arrow">↓</span><span>MallowCoord for Windows<small>EXE not available yet</small></span></a><p class="coord-note">(MallowCoord website is online though!)</p></div>
+        <div class="download-item"><a class="download" aria-disabled="true"><span class="arrow">↓</span><span>MallowCoord for Windows<small>EXE not available yet</small></span></a><a class="coord-note" href="https://mallowcord-web.onrender.com/" target="_blank" rel="noopener noreferrer">(MallowCoord website is online though!)</a></div>
         <a class="download secondary" href="https://mallowbot.kz.ci/"><span class="arrow">↗</span><span>Mallow-Bot Panel<small>Open dashboard</small></span></a>
       </div>
     </section>
