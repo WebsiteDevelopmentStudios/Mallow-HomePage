@@ -7,7 +7,7 @@
   <meta name="description" content="Get Mallow for Windows and Android.">
   <title>Mallow — A place to connect</title>
   <style>
-    :root{color-scheme:dark;--white:#f7f8ff;--muted:#b7bed2;--violet:#a99aff;--blue:#64caff}
+    :root{color-scheme:dark;--white:#f7f8ff;--muted:#b7bed2}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;min-height:100vh;overflow-x:hidden;background:#02030a;color:var(--white);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -35,10 +35,11 @@
     .download.secondary{background:#171629;color:#f3f1ff;border-color:#aaa0ff75}
     .download .arrow{font-size:1.25rem}
     .download small{display:block;font-size:.7rem;line-height:1.25;font-weight:650;opacity:.65;text-align:left}
-    .earth-wrap{position:absolute;z-index:0;left:50%;bottom:0;transform:translateX(-50%);width:min(150vw,1800px);height:min(62vw,760px);min-height:340px;pointer-events:none;overflow:hidden}
-    .earth{position:absolute;left:50%;top:0;transform:translateX(-50%);width:100%;height:200%;border-radius:50%;overflow:hidden;background:radial-gradient(ellipse at 50% 5%,#267b9d 0%,#14506d 23%,#092c49 47%,#06172b 69%,#020713 100%);box-shadow:0 -12px 55px #3eafff55,0 -2px 12px #8bdcffaa,inset 0 18px 38px #8bdcff30}
-    .earth:before{content:"";position:absolute;inset:0;border-radius:50%;background-image:
-      radial-gradient(ellipse 8% 5% at 17% 24%,#478b65 0 60%,transparent 64%),
+    /* A low, flattened planetary disc: its surface scrolls sideways like a rotating world. */
+    .earth-wrap{position:absolute;z-index:0;left:50%;bottom:-285px;transform:translateX(-50%);width:min(165vw,2100px);height:520px;pointer-events:none;overflow:hidden}
+    .earth{position:absolute;left:50%;top:0;width:150%;height:520px;border-radius:50%;transform:translateX(-50%) rotateX(72deg);transform-origin:50% 0%;overflow:hidden;background:radial-gradient(ellipse at 50% 3%,#2b7899 0%,#15506e 28%,#092a47 63%,#030b19 100%);box-shadow:0 -18px 65px #3eafff66,0 -3px 18px #8bdcffcc,inset 0 24px 48px #9be5ff35}
+    .earth:before{content:"";position:absolute;inset:0;border-radius:50%;background-color:#164c43;background-image:
+      radial-gradient(ellipse 8% 5% at 17% 24%,#57966c 0 60%,transparent 64%),
       radial-gradient(ellipse 10% 7% at 24% 31%,#397b59 0 60%,transparent 64%),
       radial-gradient(ellipse 5% 9% at 29% 43%,#43865e 0 60%,transparent 64%),
       radial-gradient(ellipse 12% 6% at 43% 23%,#4b8b61 0 60%,transparent 64%),
@@ -46,13 +47,14 @@
       radial-gradient(ellipse 13% 7% at 66% 27%,#498b60 0 60%,transparent 64%),
       radial-gradient(ellipse 8% 11% at 73% 39%,#397b57 0 60%,transparent 64%),
       radial-gradient(ellipse 10% 6% at 86% 23%,#4c9066 0 60%,transparent 64%),
-      radial-gradient(ellipse 6% 5% at 91% 48%,#3b805b 0 60%,transparent 64%);
-      background-size:100% 100%;filter:drop-shadow(0 0 3px #75bd8b);animation:continents-spin 42s linear infinite;opacity:.9}
-    .earth:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 50% 2%,#9be5ff55 0%,transparent 34%),linear-gradient(180deg,transparent 48%,#01040c 92%);box-shadow:inset -90px -30px 150px #0009,inset 80px 0 110px #020b1b88}
-    @keyframes continents-spin{from{background-position:0 0;filter:hue-rotate(0deg)}to{background-position:100vw 0;filter:hue-rotate(12deg)}}
-    .horizon-glow{position:absolute;left:50%;top:0;transform:translateX(-50%);width:100%;height:70px;border-radius:50%;background:#58c9ff;filter:blur(55px);opacity:.32}
+      radial-gradient(ellipse 6% 5% at 91% 48%,#3b805b 0 60%,transparent 64%),
+      linear-gradient(90deg,#0b3853,#2c806f 45%,#0a304d 100%);
+      background-size:100% 100%;filter:drop-shadow(0 0 4px #75bd8b);animation:disc-spin 28s linear infinite;opacity:.92}
+    .earth:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 50% 1%,#b2edff77 0%,transparent 36%),linear-gradient(180deg,transparent 35%,#01040c 86%);box-shadow:inset -100px -20px 160px #000b,inset 100px 0 120px #020b1b99}
+    @keyframes disc-spin{from{background-position:0 0}to{background-position:100vw 0}}
+    .horizon-glow{position:absolute;left:50%;top:4px;transform:translateX(-50%);width:92%;height:80px;border-radius:50%;background:#58c9ff;filter:blur(62px);opacity:.4}
     footer{position:absolute;bottom:14px;left:0;right:0;z-index:2;text-align:center;color:#aeb5cb;font-size:.78rem}
-    @media(max-width:700px){.wrap{width:calc(100% - 34px)}header{height:72px}.brand{font-size:.98rem}.brand-mark{width:32px;height:32px}nav{display:none}.top-download{padding:9px 14px;font-size:.82rem}.intro{padding-top:8vh}h1{font-size:clamp(2.8rem,12vw,4.4rem)}.intro p{max-width:430px}.downloads{gap:11px;margin-top:27px}.download{width:min(100%,330px);min-width:0;padding:12px 16px}.earth-wrap{width:190vw;height:76vw;min-height:310px}.earth{height:200%}footer{bottom:8px}}
+    @media(max-width:700px){.wrap{width:calc(100% - 34px)}header{height:72px}.brand{font-size:.98rem}.brand-mark{width:32px;height:32px}nav{display:none}.top-download{padding:9px 14px;font-size:.82rem}.intro{padding-top:8vh}h1{font-size:clamp(2.8rem,12vw,4.4rem)}.intro p{max-width:430px}.downloads{gap:11px;margin-top:27px}.download{width:min(100%,330px);min-width:0;padding:12px 16px}.earth-wrap{width:210vw;height:370px;bottom:-230px}.earth{width:175%;height:470px;transform:translateX(-50%) rotateX(74deg)}.horizon-glow{width:100%;height:55px;filter:blur(48px)}footer{bottom:8px}}
     @media(prefers-reduced-motion:reduce){body:before,body:after,.earth:before{animation:none}}
   </style>
 </head>
