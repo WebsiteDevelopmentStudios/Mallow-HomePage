@@ -38,7 +38,7 @@
     /* A flat, face-on Earth disc. The lower part is deliberately clipped by the viewport. */
     main{overflow:hidden}
     .earth-wrap{position:absolute;z-index:0;left:50%;bottom:calc(-180vw + 24vh);transform:translateX(-50%);width:180vw;height:180vw;pointer-events:none}
-    .earth{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#08243a;border:2px solid #4bbcff;box-shadow:0 -5px 34px #38baff88,0 -1px 9px #a6e6ffcc}
+    .earth{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(ellipse at 48% 42%,#17617a 0%,#0b3855 52%,#041729 100%);border:1px solid #8bdcff;box-shadow:0 0 12px #38baff88,0 0 34px #168bd966,inset 0 5px 16px #9beaff55}
     .earth:before{content:"";position:absolute;inset:-2%;border-radius:50%;background-color:#124c55;background-image:
       radial-gradient(ellipse 8% 5% at 17% 24%,#57966c 0 60%,transparent 64%),
       radial-gradient(ellipse 10% 7% at 24% 31%,#397b59 0 60%,transparent 64%),
@@ -51,11 +51,11 @@
       radial-gradient(ellipse 6% 5% at 91% 48%,#3b805b 0 60%,transparent 64%),
       repeating-linear-gradient(90deg,#0b3853 0 7%,#176b72 12%,#164b57 19%,#26785e 25%,#0b3853 33%);
       background-size:100% 100%;animation:disc-spin 38s linear infinite;transform-origin:50% 50%;opacity:.98}
-    .earth:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,transparent 48%,#020b1b55 78%,#01040c99 100%),linear-gradient(180deg,#a4eaff18,transparent 40%);pointer-events:none}
+    .earth:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 30% 22%,#d6f6ff33 0 1%,transparent 10%),radial-gradient(ellipse at 67% 31%,#d6f6ff22 0 2%,transparent 13%),repeating-linear-gradient(12deg,transparent 0 34px,#b9eaff0b 35px 37px,transparent 39px 75px),radial-gradient(circle at 50% 50%,transparent 48%,#020b1b55 78%,#01040c99 100%),linear-gradient(180deg,#a4eaff18,transparent 40%);box-shadow:inset 0 5px 13px #b7edff55;pointer-events:none}
     @keyframes disc-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-    .horizon-glow{position:absolute;left:50%;top:0;transform:translateX(-50%);width:94%;height:26px;border-radius:50%;background:#58c9ff;filter:blur(36px);opacity:.65}
+    .horizon-glow{display:none}
     footer{position:absolute;bottom:14px;left:0;right:0;z-index:2;text-align:center;color:#aeb5cb;font-size:.78rem}
-    @media(max-width:700px){.wrap{width:calc(100% - 34px)}header{height:72px}.brand{font-size:.98rem}.brand-mark{width:32px;height:32px}nav{display:none}.top-download{padding:9px 14px;font-size:.82rem}.intro{padding-top:8vh}h1{font-size:clamp(2.8rem,12vw,4.4rem)}.intro p{max-width:430px}.downloads{gap:11px;margin-top:27px}.download{width:min(100%,330px);min-width:0;padding:12px 16px}.earth-wrap{width:220vw;height:220vw;bottom:calc(-220vw + 22vh)}.horizon-glow{width:94%;height:20px;filter:blur(30px)}footer{bottom:8px}}
+    @media(max-width:700px){.wrap{width:calc(100% - 34px)}header{height:72px}.brand{font-size:.98rem}.brand-mark{width:32px;height:32px}nav{display:none}.top-download{padding:9px 14px;font-size:.82rem}.intro{padding-top:8vh}h1{font-size:clamp(2.8rem,12vw,4.4rem)}.intro p{max-width:430px}.downloads{gap:11px;margin-top:27px}.download{width:min(100%,330px);min-width:0;padding:12px 16px}.earth-wrap{width:220vw;height:220vw;bottom:calc(-220vw + 22vh)}footer{bottom:8px}}
     @media(prefers-reduced-motion:reduce){body:before,body:after,.earth:before{animation:none}}
   </style>
 </head>
@@ -75,7 +75,7 @@
         <a class="download secondary" aria-disabled="true"><span class="arrow">↓</span><span>Get Mallow for Android<small>APK coming soon</small></span></a>
       </div>
     </section>
-    <div class="earth-wrap" aria-hidden="true"><div class="horizon-glow"></div><div class="earth"></div></div>
+    <div class="earth-wrap" aria-hidden="true"><div class="earth"></div></div>
   </main>
   <footer id="support">Mallow</footer>
 </body>
