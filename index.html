@@ -35,18 +35,16 @@
     .download.secondary{background:#171629;color:#f3f1ff;border-color:#aaa0ff75}
     .download .arrow{font-size:1.25rem}
     .download small{display:block;font-size:.7rem;line-height:1.25;font-weight:650;opacity:.65;text-align:left}
-    /* A flat, face-on Earth disc. The lower part is deliberately clipped by the viewport. */
+    /* Flat rotating Earth disc with geographic map, clipped below the viewport. */
     main{overflow:hidden}
     .earth-wrap{position:absolute;z-index:0;left:50%;bottom:calc(-180vw + 24vh);transform:translateX(-50%);width:180vw;height:180vw;pointer-events:none}
-    .earth{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(ellipse at 48% 42%,#17617a 0%,#0b3855 52%,#041729 100%);border:1px solid #8bdcff;box-shadow:0 0 12px #38baff88,0 0 34px #168bd966,inset 0 5px 16px #9beaff55}
-    .earth{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(ellipse at 50% 48%,#0d4966 0%,#07324e 58%,#031526 100%);border:1px solid #5ebde8;box-shadow:0 0 16px #279bd655,0 0 38px #168bd944,inset 0 4px 14px #8bdcff33}
-    .earth-map{position:absolute;inset:-1%;width:102%;height:102%;animation:disc-spin 100s linear infinite;transform-origin:50% 50%}
-    .earth-map .land{fill:#477b65;stroke:#76a98a;stroke-width:1.2;stroke-linejoin:round}
-    .earth-map .land-detail{fill:#6b9874;opacity:.38}
-    .earth-map .ice{fill:#a8c7c8;opacity:.75}
-    .earth:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 32% 23%,#b7eaff12,transparent 25%),radial-gradient(circle at 50% 50%,transparent 57%,#020b1b66 84%,#01040cbb 100%);pointer-events:none}
+    .earth{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(ellipse at 48% 38%,#174b62 0%,#0b3048 58%,#041322 100%);border:1px solid #8bdcff;box-shadow:0 0 12px #38baff88,0 0 34px #168bd966,inset 0 5px 16px #9beaff44}
+    .earth-map{position:absolute;inset:0;width:100%;height:100%;animation:disc-spin 105s linear infinite;transform-origin:50% 50%}
+    .earth-map .land{stroke:#a7b79a;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+    .earth-map .relief{fill:none;stroke:#d1c69a;stroke-width:5;stroke-linecap:round;opacity:.28}
+    .earth-map .island{fill:#849779;stroke:#b3c09d;stroke-width:1.5}
+    .earth:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,transparent 53%,#020b1b55 82%,#01040c99 100%);box-shadow:inset 0 5px 13px #b7edff35;pointer-events:none}
     @keyframes disc-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-    .horizon-glow{display:none}
     footer{position:absolute;bottom:14px;left:0;right:0;z-index:2;text-align:center;color:#aeb5cb;font-size:.78rem}
     @media(max-width:700px){.wrap{width:calc(100% - 34px)}header{height:72px}.brand{font-size:.98rem}.brand-mark{width:32px;height:32px}nav{display:none}.top-download{padding:9px 14px;font-size:.82rem}.intro{padding-top:8vh}h1{font-size:clamp(2.8rem,12vw,4.4rem)}.intro p{max-width:430px}.downloads{gap:11px;margin-top:27px}.download{width:min(100%,330px);min-width:0;padding:12px 16px}.earth-wrap{width:220vw;height:220vw;bottom:calc(-220vw + 22vh)}footer{bottom:8px}}
     @media(prefers-reduced-motion:reduce){body:before,body:after,.earth:before{animation:none}}
@@ -68,33 +66,40 @@
         <a class="download secondary" aria-disabled="true"><span class="arrow">↓</span><span>Get Mallow for Android<small>APK coming soon</small></span></a>
       </div>
     </section>
-    <div class="earth-wrap" aria-hidden="true"><div class="earth">
-      <svg class="earth-map" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
-        <g class="land">
-          <path d="M90 250 111 220 142 205 166 177 207 166 228 180 250 174 270 192 294 190 313 212 304 232 282 237 274 258 250 264 241 284 220 289 210 313 189 318 180 343 159 345 150 326 133 316 128 291 107 282Z"/>
-          <path d="M228 354 251 347 272 359 284 382 278 408 291 431 283 459 268 485 264 518 247 550 235 582 218 606 207 585 205 554 190 530 194 500 178 475 185 449 173 427 185 401 204 382Z"/>
-          <path d="M332 211 356 195 382 201 399 187 429 194 447 214 475 217 493 235 480 252 459 254 447 274 426 278 409 300 386 302 373 284 349 278 340 256 320 246Z"/>
-          <path d="M405 309 431 294 461 302 482 321 493 348 481 371 488 398 474 424 464 455 446 481 429 507 414 489 407 459 390 437 389 410 374 387 381 359 370 337Z"/>
-          <path d="M478 218 505 198 539 194 565 205 594 197 623 211 652 206 679 221 709 219 737 235 768 230 794 246 822 243 845 261 869 271 884 293 866 310 839 308 822 324 796 318 778 336 750 329 731 346 706 339 690 357 665 349 645 365 623 353 602 369 581 352 557 361 541 342 516 344 497 326 477 321 464 296 478 272Z"/>
-          <path d="M506 362 533 346 563 354 580 376 600 390 611 420 600 449 584 474 569 501 551 524 531 514 520 487 504 465 499 435 485 410Z"/>
-          <path d="M695 388 724 377 751 387 767 409 760 432 738 442 719 430 700 416Z"/>
-          <path d="M798 467 824 452 854 461 874 481 864 503 841 511 817 500Z"/>
-          <path d="M884 553 910 543 930 558 925 580 900 589 883 574Z"/>
-          <path d="M335 174 352 159 374 164 383 180 365 192 344 188Z"/>
-          <path d="M560 530 579 520 594 533 587 550 568 554Z"/>
-          <path d="M640 570 659 557 676 565 671 584 651 590Z"/>
-        </g>
-        <g class="land-detail">
-          <path d="M111 245 147 221 176 218 194 234 168 249 143 267Z"/>
-          <path d="M211 374 249 364 266 386 248 408 216 405Z"/>
-          <path d="M397 324 432 315 454 333 443 357 414 356Z"/>
-          <path d="M528 224 564 214 590 229 568 247 540 246Z"/>
-          <path d="M628 245 672 233 705 250 680 268 645 267Z"/>
-          <path d="M520 390 550 372 571 395 558 426 535 430Z"/>
-        </g>
-        <g class="ice"><path d="M102 181 130 160 170 154 203 163 190 180 153 188 123 198Z"/><path d="M820 239 846 228 871 240 864 257 840 260Z"/></g>
-      </svg>
-    </div></div>
+    <div class="earth-wrap" aria-hidden="true">
+      <div class="earth">
+        <svg class="earth-map" viewBox="0 0 1000 1000" aria-hidden="true">
+          <g>
+            <path class="land" fill="#718875" d="M92 228 121 190 164 177 194 147 236 154 262 177 304 181 331 209 362 216 375 245 354 270 330 281 320 310 298 328 287 360 264 378 249 412 226 425 214 463 191 449 180 415 159 391 151 355 128 333 121 299 99 276Z"/>
+            <path class="land" fill="#7e8d70" d="M204 430 226 418 249 430 267 453 286 468 293 493 314 511 321 539 307 561 296 584 276 590 264 568 246 552 232 526 214 510 205 480 190 459Z"/>
+            <path class="land" fill="#87916f" d="M302 570 323 558 340 571 350 595 365 614 374 642 369 673 356 701 350 735 332 770 317 808 297 835 283 812 287 778 276 746 282 712 270 681 277 650 267 623 278 596Z"/>
+            <path class="land" fill="#a5a58b" d="M347 104 380 82 415 96 432 128 421 164 398 192 365 180 342 149Z"/>
+            <path class="land" fill="#8a936e" d="M351 574 374 566 399 581 414 606 427 636 426 667 442 693 430 724 422 757 407 789 396 825 378 859 362 844 354 811 341 781 337 746 324 714 324 680 312 649 319 620 333 594Z"/>
+            <path class="land" fill="#899276" d="M455 255 477 236 504 239 520 226 548 236 566 231 586 249 581 269 561 279 548 296 526 292 510 309 489 300 470 314 451 295Z"/>
+            <path class="land" fill="#a08e68" d="M474 326 503 304 536 311 558 331 580 350 588 381 578 412 582 446 565 478 554 513 536 544 524 579 501 607 484 591 473 560 456 532 447 498 438 465 441 429 430 397 442 364Z"/>
+            <path class="land" fill="#71866f" d="M574 226 602 207 634 211 660 194 693 202 717 187 750 198 778 189 811 207 841 206 866 225 901 226 925 249 916 277 890 289 871 312 843 315 826 339 798 347 780 370 750 365 729 386 702 377 684 397 657 384 637 361 615 356 596 332 581 304 563 283Z"/>
+            <path class="land" fill="#8d936e" d="M623 372 649 357 672 372 686 397 699 424 691 451 675 475 659 468 647 441 630 421 617 395Z"/>
+            <path class="land" fill="#788a6c" d="M707 391 731 382 751 395 765 420 785 439 797 465 788 488 767 484 751 466 730 449 716 425Z"/>
+            <path class="land" fill="#8b946f" d="M770 471 794 458 818 469 839 489 857 514 850 541 829 548 811 530 790 520 776 499Z"/>
+            <path class="land" fill="#a2946e" d="M807 665 835 644 871 648 901 668 918 699 909 732 888 753 858 761 832 746 807 725 794 696Z"/>
+            <path class="land" fill="#9ba99b" d="M248 906 292 891 337 899 379 887 425 899 471 891 517 900 559 889 603 901 650 890 697 900 742 890 786 902 831 892 873 906 854 930 804 939 757 930 710 941 661 930 615 940 567 930 520 941 473 930 427 940 379 929 334 940 286 928Z"/>
+            <path class="island" d="M286 128 300 119 313 126 307 140 292 143Z"/>
+            <path class="island" d="M442 274 451 260 460 268 456 284Z"/>
+            <path class="island" d="M594 542 604 531 611 549 607 574 597 591 589 574Z"/>
+            <path class="island" d="M895 359 907 346 916 361 910 382 899 395 892 380Z"/>
+            <path class="island" d="M844 572 863 563 878 574 869 588 850 588Z"/>
+          </g>
+          <g class="relief">
+            <path d="M150 252Q205 235 248 270T320 279"/>
+            <path d="M177 321Q219 300 255 330T291 350"/>
+            <path d="M338 606Q354 657 366 703T376 799"/>
+            <path d="M466 367Q490 391 502 427T511 514"/>
+            <path d="M588 265Q654 246 710 260T841 253"/>
+            <path d="M688 318Q738 299 788 321T879 300"/>
+          </g>
+        </svg>
+      </div>
+    </div>
   </main>
   <footer id="support">Mallow</footer>
 </body>
