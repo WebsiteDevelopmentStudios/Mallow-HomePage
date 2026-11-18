@@ -3,78 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090b12">
-  <meta name="description" content="Download Mallow for Android or Windows.">
-  <title>Mallow — Downloads</title>
+  <meta name="theme-color" content="#11145d">
+  <meta name="description" content="Get Mallow for Windows and Android.">
+  <title>Mallow — Connect your way</title>
   <style>
-    :root{color-scheme:dark;--bg:#090b12;--panel:#111522;--line:#252d40;--text:#f4f6fb;--muted:#a3adc2;--accent:#a78bfa;--accent2:#6ee7b7}
+    :root{color-scheme:dark;--ink:#fff;--muted:#e0e2f7;--blue:#5865f2;--deep:#090b2d}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,#29204b 0,transparent 48%),var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}
-    .wrap{width:min(1080px,calc(100% - 40px));margin:auto}
-    header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0d}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:1.18rem;font-weight:800;letter-spacing:.02em}
-    .mark{width:38px;height:38px;border-radius:13px;background:linear-gradient(145deg,#c4b5fd,#7c3aed);display:grid;place-items:center;color:#100d1d;font-weight:950;box-shadow:0 8px 30px #8b5cf644}
-    .nav{color:var(--muted);text-decoration:none;font-size:.92rem}
-    .hero{text-align:center;padding:100px 0 64px}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border:1px solid #a78bfa44;border-radius:999px;background:#a78bfa12;color:#d7c9ff;font-size:.82rem;font-weight:700}
-    .dot{width:7px;height:7px;background:var(--accent2);border-radius:50%;box-shadow:0 0 12px var(--accent2)}
-    h1{font-size:clamp(2.8rem,8vw,5.7rem);line-height:1.02;letter-spacing:-.065em;margin:24px 0 18px}
-    h1 span{background:linear-gradient(100deg,#c4b5fd 10%,#a78bfa 55%,#6ee7b7 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{max-width:610px;margin:0 auto;color:var(--muted);font-size:1.12rem}
-    .downloads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:760px;margin:48px auto 0;text-align:left}
-    .card{position:relative;min-height:230px;padding:27px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(150deg,#171d2d,#101522);box-shadow:0 18px 60px #0003;display:flex;flex-direction:column;align-items:flex-start}
-    .card-icon{width:48px;height:48px;border-radius:15px;background:#a78bfa1c;color:#c4b5fd;display:grid;place-items:center;margin-bottom:18px}
-    .card-icon svg{width:24px;height:24px}
-    h2{font-size:1.25rem;line-height:1.3;margin:0 0 8px}
-    .card p{margin:0 0 22px;color:var(--muted);font-size:.94rem}
-    .action{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 16px;border-radius:12px;background:#27213c;border:1px solid #54447c;color:#d8ccff;font-weight:750}
-    .action.disabled{cursor:default;opacity:.82}
-    .soon{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:6px;background:#ffffff12;color:#c4cadd}
-    .details{padding:24px 0 86px;text-align:center;color:var(--muted);font-size:.92rem}
-    .details strong{color:#e8eaf2}
-    footer{border-top:1px solid #ffffff0d;padding:24px 0 34px;color:#7f899e;font-size:.84rem}
-    footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    @media(max-width:650px){.hero{padding:76px 0 48px}.downloads{grid-template-columns:1fr;margin-top:36px}.card{min-height:210px}.nav{display:none}}
-    @media(prefers-reduced-motion:no-preference){.card{transition:transform .2s ease,border-color .2s ease}.card:hover{transform:translateY(-4px);border-color:#7560a9}}
+    body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 88% 72%,#343bd0 0,transparent 48%),radial-gradient(ellipse at 48% 30%,#171b79 0,transparent 55%),linear-gradient(115deg,#050619 0%,#10134e 52%,#20278f 100%)}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.42;background-image:radial-gradient(2px 2px at 8% 12%,#fff 98%,transparent),radial-gradient(3px 3px at 24% 28%,#aeb8ff 98%,transparent),radial-gradient(2px 2px at 39% 9%,#fff 98%,transparent),radial-gradient(3px 3px at 62% 18%,#b7a9ff 98%,transparent),radial-gradient(2px 2px at 77% 37%,#fff 98%,transparent),radial-gradient(3px 3px at 91% 13%,#aeb8ff 98%,transparent),radial-gradient(2px 2px at 15% 68%,#fff 98%,transparent),radial-gradient(2px 2px at 52% 79%,#fff 98%,transparent),radial-gradient(3px 3px at 83% 83%,#c5caff 98%,transparent);background-size:390px 310px}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1450px,calc(100% - 72px));margin:auto;position:relative}
+    header{height:88px;display:flex;align-items:center;justify-content:space-between;gap:30px;z-index:2}
+    .brand{display:flex;align-items:center;gap:11px;font-size:1.35rem;font-weight:900;letter-spacing:-.04em}
+    .brand-mark{width:34px;height:34px;border-radius:11px;background:#fff;color:#252b87;display:grid;place-items:center;font-size:21px;font-weight:950}
+    nav{display:flex;align-items:center;gap:clamp(18px,3vw,44px);font-size:.91rem;font-weight:700}
+    nav a{opacity:.92;transition:opacity .2s}nav a:hover{opacity:.65}
+    .open-link{background:#fff;color:#151747;padding:11px 22px;border-radius:999px;font-weight:800;white-space:nowrap}
+    .hero{min-height:610px;display:grid;grid-template-columns:.86fr 1.14fr;align-items:center;gap:30px;padding:42px 0 18px}
+    .copy{max-width:540px;padding-left:clamp(0px,5vw,72px);z-index:1}
+    h1{margin:0 0 22px;font-size:clamp(3rem,5vw,5.25rem);line-height:.91;letter-spacing:-.055em;font-weight:950;text-transform:uppercase}
+    .copy p{max-width:475px;margin:0;color:#f0f1ff;font-size:clamp(1rem,1.3vw,1.2rem);line-height:1.5;font-weight:500}
+    .art{height:520px;position:relative;display:flex;align-items:center;justify-content:center;min-width:0}
+    .desktop{position:absolute;width:min(91%,720px);height:390px;right:5%;top:45px;transform:perspective(1200px) rotateY(-8deg) rotateZ(-1deg);border:8px solid #24285d;border-radius:22px;background:#090b16;box-shadow:0 22px 0 #171a4d,0 0 0 2px #6973ff;overflow:hidden}
+    .screen-top{height:35px;background:#11162a;border-bottom:1px solid #30375e;display:flex;align-items:center;gap:7px;padding:0 13px;color:#aeb8e7;font-size:10px}
+    .screen-top i{width:7px;height:7px;border-radius:50%;background:#777fd2}
+    .screen-body{height:calc(100% - 35px);display:grid;grid-template-columns:145px 1fr 125px;background:#10121d}
+    .side{padding:13px 10px;border-right:1px solid #292e4a;color:#aeb6d9;font-size:10px}
+    .server{display:flex;align-items:center;gap:8px;margin:0 0 12px}.avatar{width:22px;height:22px;border-radius:8px;background:linear-gradient(140deg,#a7aaff,#555ed1);flex:none}
+    .channel{padding:5px 6px;color:#aeb6d9}.channel.active{background:#2a2e5a;border-radius:5px;color:white}
+    .chat{padding:15px 17px;min-width:0}
+    .chat-head{font-size:11px;color:#fff;padding-bottom:12px;border-bottom:1px solid #292e4a;font-weight:800}
+    .message{display:flex;gap:9px;margin-top:16px;color:#dfe2f7;font-size:10px;line-height:1.5}.message .avatar{width:25px;height:25px;border-radius:50%}.message b{display:block;color:#fff;font-size:10px;margin-bottom:2px}
+    .bubble{height:8px;border-radius:6px;background:#333957;margin-top:6px;width:78%}.bubble.short{width:48%}.bubble.mid{width:62%}
+    .members{border-left:1px solid #292e4a;padding:14px 9px;color:#9da7ce;font-size:9px}
+    .member{display:flex;align-items:center;gap:6px;margin:10px 0}.member .avatar{width:16px;height:16px;border-radius:50%}
+    .phone{position:absolute;right:0;bottom:10px;width:145px;height:275px;border:7px solid #20265e;border-radius:26px;background:#090b18;box-shadow:0 12px 0 #171a4d;transform:rotate(4deg);padding:10px 7px;z-index:1}
+    .phone-notch{width:45px;height:8px;border-radius:9px;background:#20264b;margin:0 auto 12px}
+    .phone-title{font-size:10px;font-weight:800;margin:0 0 10px}
+    .phone-tile{height:62px;border-radius:9px;background:linear-gradient(135deg,#4c5bdb,#9c71db);margin-bottom:9px}
+    .phone-line{height:25px;border-radius:7px;background:#1b2140;margin:7px 0}
+    .phone-line:before{content:"";display:block;width:17px;height:17px;border-radius:50%;background:#7886ef;position:relative;top:4px;left:5px}
+    .buttons{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:0 0 58px}
+    .download{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-width:250px;padding:17px 24px;border-radius:12px;background:#fff;color:#10133d;font-size:1.02rem;font-weight:750;box-shadow:0 5px 0 #c9cbff}
+    .download.secondary{background:#5865f2;color:#fff;box-shadow:0 5px 0 #3b45b5}
+    .download[aria-disabled=true]{cursor:default}
+    .download small{font-size:.72rem;opacity:.7;font-weight:650}
+    @media(max-width:900px){.wrap{width:min(100% - 40px,720px)}nav{gap:15px}.hero{grid-template-columns:1fr;gap:0;padding-top:55px}.copy{padding:0;text-align:center;margin:auto}.copy p{margin:auto}.art{height:440px}.desktop{width:88%;height:330px;right:8%;top:35px}.screen-body{grid-template-columns:105px 1fr 90px}.phone{right:1%;width:120px;height:235px}.buttons{padding-bottom:42px}}
+    @media(max-width:600px){header{height:70px}.brand{font-size:1.1rem}nav{display:none}.open-link{padding:9px 15px;font-size:.82rem}.hero{padding-top:55px}h1{font-size:clamp(2.7rem,13vw,4.2rem)}.art{height:330px;margin-top:20px}.desktop{width:94%;height:245px;right:3%;top:30px;border-width:5px;border-radius:14px}.screen-top{height:24px}.screen-body{height:calc(100% - 24px);grid-template-columns:74px 1fr 65px}.side{padding:8px 5px;font-size:7px}.avatar{width:16px;height:16px}.channel{padding:4px 3px}.chat{padding:9px 8px}.chat-head,.message,.message b{font-size:8px}.message .avatar{width:18px;height:18px}.members{padding:9px 4px;font-size:7px}.member{gap:3px}.member .avatar{width:12px;height:12px}.phone{width:91px;height:180px;border-width:5px;border-radius:18px;padding:7px 5px;bottom:0}.phone-notch{height:5px;width:30px;margin-bottom:7px}.phone-title{font-size:7px}.phone-tile{height:39px}.phone-line{height:17px;margin:5px 0}.phone-line:before{width:11px;height:11px;top:3px;left:3px}.buttons{gap:13px;padding-bottom:35px}.download{width:100%;min-width:0;padding:15px 18px}}
+    @media(prefers-reduced-motion:no-preference){.download{transition:transform .18s ease}.download:hover{transform:translateY(-2px)}}
   </style>
 </head>
 <body>
   <header class="wrap">
-    <a class="brand" href="#" aria-label="Mallow home"><span class="mark">M</span><span>MALLOW</span></a>
-    <a class="nav" href="#downloads">Get Mallow <span aria-hidden="true">↗</span></a>
+    <div class="brand" aria-label="Mallow"><span class="brand-mark">M</span></div>
+    <nav aria-label="Main navigation">
+      <a href="#downloads">Download</a>
+      <a href="#features">Features</a>
+      <a href="#support">Support</a>
+    </nav>
+    <a class="open-link" href="#downloads">Get Mallow</a>
   </header>
   <main>
-    <section class="hero wrap">
-      <div class="eyebrow"><span class="dot"></span> Your Mallow download hub</div>
-      <h1>Welcome to <span>Mallow.</span></h1>
-      <p class="lead">Get Mallow on the device you use every day. Choose your platform below.</p>
-      <div class="downloads" id="downloads">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16.5 3.8 19M19 16.5l1.2 2.5M7 10l-1.5-2M17 10l1.5-2"/><rect x="4" y="9" width="16" height="11" rx="4"/><path d="M8 9a4 4 0 0 1 8 0M9 14h.01M15 14h.01"/></svg>
+    <section class="hero wrap" id="features">
+      <div class="copy">
+        <h1>CHAT THAT'S<br>ALL FUN &amp;<br>CONNECTION.</h1>
+        <p>Make your space your own. Talk with friends, share moments, and bring your community together with Mallow.</p>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="desktop">
+          <div class="screen-top"><i></i><i></i><i></i><span style="margin-left:9px">Mallow · Community</span></div>
+          <div class="screen-body">
+            <aside class="side"><div class="server"><span class="avatar"></span><b>Mallow Hub</b></div><div class="channel active"># general</div><div class="channel"># announcements</div><div class="channel"># media</div><div class="channel"># gaming</div><div class="server" style="margin-top:18px"><span class="avatar"></span><b>Friends</b></div><div class="channel"># hangout</div><div class="channel"># chat</div></aside>
+            <div class="chat"><div class="chat-head"># general</div><div class="message"><span class="avatar"></span><div><b>Alex · Today at 10:42 AM</b>Anyone around to play later?<div class="bubble"></div><div class="bubble short"></div></div></div><div class="message"><span class="avatar" style="background:linear-gradient(140deg,#e39bc9,#8a58ca)"></span><div><b>Jamie · Today at 10:44 AM</b>Absolutely! Count me in.<div class="bubble mid"></div></div></div><div class="message"><span class="avatar" style="background:linear-gradient(140deg,#79d8c5,#397eae)"></span><div><b>Riley · Today at 10:47 AM</b>I'll bring snacks<div class="bubble short"></div></div></div></div>
+            <aside class="members">ONLINE — 8<div class="member"><span class="avatar"></span> Alex</div><div class="member"><span class="avatar"></span> Jamie</div><div class="member"><span class="avatar"></span> Riley</div><div class="member"><span class="avatar"></span> Morgan</div><div class="member"><span class="avatar"></span> Taylor</div></aside>
           </div>
-          <h2>Android app</h2>
-          <p>Take Mallow with you on your Android phone or tablet.</p>
-          <span class="action disabled" aria-disabled="true">APK coming soon <span class="soon">In development</span></span>
-        </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4M3 9h18"/></svg>
-          </div>
-          <h2>Windows app</h2>
-          <p>Install Mallow on your Windows PC with the desktop application.</p>
-          <span class="action disabled" aria-disabled="true">EXE coming soon <span class="soon">In development</span></span>
-        </article>
+        </div>
+        <div class="phone"><div class="phone-notch"></div><div class="phone-title">Mallow</div><div class="phone-tile"></div><div class="phone-line"></div><div class="phone-line"></div><div class="phone-line"></div><div class="phone-line"></div></div>
       </div>
     </section>
-    <section class="details wrap">
-      <strong>One home for Mallow.</strong><br>
-      Official download links will appear here when each app is ready.
+    <section class="buttons wrap" id="downloads" aria-label="Downloads">
+      <a class="download" aria-disabled="true"><span>↓</span><span>Download for Windows<br><small>EXE coming soon</small></span></a>
+      <a class="download secondary" aria-disabled="true"><span>↓</span><span>Get Mallow for Android<br><small>APK coming soon</small></span></a>
     </section>
   </main>
-  <footer><div class="wrap"><span>© <span id="year"></span> Mallow</span><span>Built for a better way to connect.</span></div></footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
