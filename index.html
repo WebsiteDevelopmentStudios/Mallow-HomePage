@@ -35,10 +35,11 @@
     .download.secondary{background:#171629;color:#f3f1ff;border-color:#aaa0ff75}
     .download .arrow{font-size:1.25rem}
     .download small{display:block;font-size:.7rem;line-height:1.25;font-weight:650;opacity:.65;text-align:left}
-    /* A low, flattened planetary disc: its surface scrolls sideways like a rotating world. */
-    .earth-wrap{position:absolute;z-index:0;left:50%;bottom:-285px;transform:translateX(-50%);width:min(165vw,2100px);height:520px;pointer-events:none;overflow:hidden}
-    .earth{position:absolute;left:50%;top:0;width:150%;height:520px;border-radius:50%;transform:translateX(-50%) rotateX(72deg);transform-origin:50% 0%;overflow:hidden;background:radial-gradient(ellipse at 50% 3%,#2b7899 0%,#15506e 28%,#092a47 63%,#030b19 100%);box-shadow:0 -18px 65px #3eafff66,0 -3px 18px #8bdcffcc,inset 0 24px 48px #9be5ff35}
-    .earth:before{content:"";position:absolute;inset:0;border-radius:50%;background-color:#164c43;background-image:
+    /* A flat, face-on Earth disc. The lower part is deliberately clipped by the viewport. */
+    main{overflow:hidden}
+    .earth-wrap{position:absolute;z-index:0;left:50%;bottom:calc(-180vw + 24vh);transform:translateX(-50%);width:180vw;height:180vw;pointer-events:none}
+    .earth{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#08243a;border:2px solid #4bbcff;box-shadow:0 -5px 34px #38baff88,0 -1px 9px #a6e6ffcc}
+    .earth:before{content:"";position:absolute;inset:-2%;border-radius:50%;background-color:#124c55;background-image:
       radial-gradient(ellipse 8% 5% at 17% 24%,#57966c 0 60%,transparent 64%),
       radial-gradient(ellipse 10% 7% at 24% 31%,#397b59 0 60%,transparent 64%),
       radial-gradient(ellipse 5% 9% at 29% 43%,#43865e 0 60%,transparent 64%),
@@ -48,13 +49,13 @@
       radial-gradient(ellipse 8% 11% at 73% 39%,#397b57 0 60%,transparent 64%),
       radial-gradient(ellipse 10% 6% at 86% 23%,#4c9066 0 60%,transparent 64%),
       radial-gradient(ellipse 6% 5% at 91% 48%,#3b805b 0 60%,transparent 64%),
-      linear-gradient(90deg,#0b3853,#2c806f 45%,#0a304d 100%);
-      background-size:100% 100%;filter:drop-shadow(0 0 4px #75bd8b);animation:disc-spin 28s linear infinite;opacity:.92}
-    .earth:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 50% 1%,#b2edff77 0%,transparent 36%),linear-gradient(180deg,transparent 35%,#01040c 86%);box-shadow:inset -100px -20px 160px #000b,inset 100px 0 120px #020b1b99}
-    @keyframes disc-spin{from{background-position:0 0}to{background-position:100vw 0}}
-    .horizon-glow{position:absolute;left:50%;top:4px;transform:translateX(-50%);width:92%;height:80px;border-radius:50%;background:#58c9ff;filter:blur(62px);opacity:.4}
+      repeating-linear-gradient(90deg,#0b3853 0 7%,#176b72 12%,#164b57 19%,#26785e 25%,#0b3853 33%);
+      background-size:100% 100%;animation:disc-spin 38s linear infinite;transform-origin:50% 50%;opacity:.98}
+    .earth:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,transparent 48%,#020b1b55 78%,#01040c99 100%),linear-gradient(180deg,#a4eaff18,transparent 40%);pointer-events:none}
+    @keyframes disc-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .horizon-glow{position:absolute;left:50%;top:0;transform:translateX(-50%);width:94%;height:26px;border-radius:50%;background:#58c9ff;filter:blur(36px);opacity:.65}
     footer{position:absolute;bottom:14px;left:0;right:0;z-index:2;text-align:center;color:#aeb5cb;font-size:.78rem}
-    @media(max-width:700px){.wrap{width:calc(100% - 34px)}header{height:72px}.brand{font-size:.98rem}.brand-mark{width:32px;height:32px}nav{display:none}.top-download{padding:9px 14px;font-size:.82rem}.intro{padding-top:8vh}h1{font-size:clamp(2.8rem,12vw,4.4rem)}.intro p{max-width:430px}.downloads{gap:11px;margin-top:27px}.download{width:min(100%,330px);min-width:0;padding:12px 16px}.earth-wrap{width:210vw;height:370px;bottom:-230px}.earth{width:175%;height:470px;transform:translateX(-50%) rotateX(74deg)}.horizon-glow{width:100%;height:55px;filter:blur(48px)}footer{bottom:8px}}
+    @media(max-width:700px){.wrap{width:calc(100% - 34px)}header{height:72px}.brand{font-size:.98rem}.brand-mark{width:32px;height:32px}nav{display:none}.top-download{padding:9px 14px;font-size:.82rem}.intro{padding-top:8vh}h1{font-size:clamp(2.8rem,12vw,4.4rem)}.intro p{max-width:430px}.downloads{gap:11px;margin-top:27px}.download{width:min(100%,330px);min-width:0;padding:12px 16px}.earth-wrap{width:220vw;height:220vw;bottom:calc(-220vw + 22vh)}.horizon-glow{width:94%;height:20px;filter:blur(30px)}footer{bottom:8px}}
     @media(prefers-reduced-motion:reduce){body:before,body:after,.earth:before{animation:none}}
   </style>
 </head>
